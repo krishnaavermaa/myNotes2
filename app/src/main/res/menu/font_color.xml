@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/defaultC"
+        android:title="@string/Default" />
+    <item
+        android:id="@+id/blackC"
+        android:title="@string/blackc"/>
+    <item
+        android:id="@+id/grayC"
+        android:title="@string/grayc"/>
+    <item
+        android:id="@+id/dkgrayC"
+        android:title="@string/dkgrayc"/>
+    <item
+        android:id="@+id/ltgrayC"
+        android:title="@string/ltgrayc"/>
+    <item
+        android:id="@+id/redC"
+        android:title="@string/redc"/>
+    <item
+        android:id="@+id/blueC"
+        android:title="@string/bluec" />
+    <item
+        android:id="@+id/greenC"
+        android:title="@string/greenc"/>
+    <item
+        android:id="@+id/yellowC"
+        android:title="@string/yellowc" />
+    <item
+        android:id="@+id/cyanC"
+        android:title="@string/cyanc"/>
+    <item
+        android:id="@+id/whiteC"
+        android:title="@string/whitec" />
+    <item android:id="@+id/magentaC"
+        android:title="@string/magenta"/>
+</menu>

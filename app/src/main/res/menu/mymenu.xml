@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/SELECT_ALL"
+        android:id="@+id/SELECT_ALL"
+        android:icon="@drawable/select_all"
+        android:onClick="onActionItemClicked"
+        app:showAsAction="always"
+        />
+    <item android:title="@string/COPY"
+        android:id="@+id/COPY"
+        android:icon="@drawable/copy"
+        android:onClick="onActionItemClicked"
+        app:showAsAction="always"
+        />
+    <item android:title="@string/CUT"
+        android:id="@+id/CUT"
+        android:icon="@drawable/cut"
+        android:onClick="onActionItemClicked"
+        app:showAsAction="always"
+        />
+    <item android:title="@string/paste_it"
+        android:id="@+id/PASTE"
+        android:icon="@drawable/paste"
+        android:onClick="onActionItemClicked"
+        app:showAsAction="always"
+        />
+</menu>

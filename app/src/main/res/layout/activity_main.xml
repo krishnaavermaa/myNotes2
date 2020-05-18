@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/context_menu_item_background"
+    tools:context="com.droidboyz.mynotes.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/myLinearLayout"
+        android:layout_alignParentTop="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/sv1"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <EditText
+                android:id="@+id/myText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect"
+                android:ems="10"
+                android:focusable="true"
+                android:gravity="start"
+                android:hint="@string/note"
+                android:inputType="textMultiLine|textCapSentences|textAutoCorrect"
+                android:minHeight="100dp"
+                android:padding="12dp"
+                android:scrollHorizontally="false"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:text=""
+                android:textAlignment="viewStart"
+                android:textColorHint="#D3D3D3"
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/sv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/myTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect"
+                android:ems="10"
+                android:focusable="true"
+                android:gravity="center"
+                android:hint="@string/title"
+                android:inputType="text|textAutoCorrect|textCapCharacters"
+                android:maxLines="1"
+                android:padding="15dp"
+                android:scrollHorizontally="true"
+                android:scrollbarAlwaysDrawHorizontalTrack="true"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="horizontal"
+                android:text=""
+                android:textColorHint="#D3D3D3"
+                android:textIsSelectable="true"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </ScrollView>
+        <!--android:hint="@string/your_matter_here"
+            android:textColorHint="#9999"
+            android:cursorVisible="true"
+            android:textIsSelectable="true"
+        <!-android:hint="@string/YOUR_TITLE_HERE"
+            android:textColorHint="#9999"
+            android:cursorVisible="true"
+            android:textIsSelectable="true"-->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/myLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@drawable/context_menu_item_background">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/save"
+            android:onClick="saveMyText" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/delete"
+            android:onClick="deleteMyText" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/open"
+            android:onClick="openMyText" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/settings"
+            android:onClick="openSettings" />
+
+    </LinearLayout>
+</RelativeLayout>

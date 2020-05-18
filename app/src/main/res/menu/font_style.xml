@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/Default"
+        android:id="@+id/defaultStyle"/>
+    <item android:title="@string/normal"
+        android:id="@+id/normal"/>
+    <item android:title="@string/bold"
+        android:id="@+id/bold"/>
+    <item android:title="@string/italic"
+        android:id="@+id/italic"/>
+    <item android:title="@string/bold_italic"
+        android:id="@+id/bold_italic"/>
+</menu>

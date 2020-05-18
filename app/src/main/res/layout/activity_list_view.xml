@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height= "match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:background="@android:color/black">
+
+    <ListView
+        android:id="@+id/myListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:divider="@drawable/red_line"
+        android:dividerHeight="1dp"
+        android:background="@android:color/background_dark"/>
+
+    <LinearLayout
+        android:id="@+id/showButton"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:scrollbars="none"
+        android:background="@android:color/transparent"
+        style="?android:buttonBarStyle">
+
+        <Button
+            android:text="@string/deleteSelected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/deleteSelected"
+            android:layout_weight="1"
+            style="?android:buttonStyleSmall"
+            android:textColor="@android:color/white"
+            android:onClick="deleteSelected"
+            android:background="@drawable/red_border"/>
+
+        <Button
+            android:text="@string/Back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="?android:buttonStyleSmall"
+            android:id="@+id/back"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"
+            android:onClick="back"
+            android:background="@drawable/red_border"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
