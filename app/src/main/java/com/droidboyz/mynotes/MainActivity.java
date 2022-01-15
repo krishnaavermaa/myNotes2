@@ -15,9 +15,8 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.ActionMode;
@@ -44,7 +43,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 
-@SuppressWarnings("ResultOfMethodCallIgnored")
+//@SuppressWarnings("ResultOfMethodCallIgnored")
 public class MainActivity extends Activity implements AdapterView.OnFocusChangeListener{
 
 
@@ -89,13 +88,13 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
         setContentView(R.layout.activity_main);
         getPermissions();
         layoutID = R.layout.activity_main;
-        myTitle = (EditText) findViewById(R.id.myTitle);
+        myTitle = findViewById(R.id.myTitle);
         myText = (EditText) findViewById(R.id.myText);
-        sampleTitle = (TextView) findViewById(R.id.sampleTitle);
-        sampleText = (TextView) findViewById(R.id.sampleText);
-        textView = (TextView) findViewById(R.id.textView);
-        changeFontColor = (TextView) findViewById(R.id.changeFontColor);
-        changeBackgroundColor = (TextView) findViewById(R.id.changeBackgroundColor);
+        sampleTitle =  findViewById(R.id.sampleTitle);
+        sampleText =  findViewById(R.id.sampleText);
+        textView =  findViewById(R.id.textView);
+        changeFontColor =  findViewById(R.id.changeFontColor);
+        changeBackgroundColor =  findViewById(R.id.changeBackgroundColor);
         deleteSelected = (Button) findViewById(R.id.deleteSelected);
         back = (Button) findViewById(R.id.back);
         titles = new ArrayList<>();
@@ -107,7 +106,8 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
         myText.setOnFocusChangeListener(this);
         et = myText;
         pasteData = "";
-        Path = Environment.getExternalStorageDirectory().getPath() + "/myNotes/files/";
+        Path = getExternalFilesDir(null).getPath() + "/myNotes/files/";
+        //Log.d("*********************",Path);
         path = new File(Path);
         if (!path.exists())
             path.mkdirs();
@@ -584,8 +584,8 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
         textTempSave = ((EditText) findViewById(R.id.myText)).getText().toString();
         setContentView(R.layout.activity_settings);
         layoutID = R.layout.activity_settings;
-        sampleTitle = (TextView) findViewById(R.id.sampleTitle);
-        sampleText = (TextView) findViewById(R.id.sampleText);
+        sampleTitle =  findViewById(R.id.sampleTitle);
+        sampleText =  findViewById(R.id.sampleText);
         sampleTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, this.myTitleSize);
         sampleText.setTextSize(TypedValue.COMPLEX_UNIT_SP, this.myTextSize);
         changeSampleColorMatter();
@@ -598,8 +598,8 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
     }
 
     public void increaseTextSize(View view) {
-        sampleTitle = (TextView) findViewById(R.id.sampleTitle);
-        sampleText = (TextView) findViewById(R.id.sampleText);
+        sampleTitle =  findViewById(R.id.sampleTitle);
+        sampleText =  findViewById(R.id.sampleText);
         float titleSize = pxtoSp(sampleTitle.getTextSize());
         float textSize = pxtoSp(sampleText.getTextSize());
         int titleSize2 = (int) titleSize;
@@ -621,8 +621,8 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
     }
 
     public void decreaseTextSize(View view) {
-        sampleTitle = (TextView) findViewById(R.id.sampleTitle);
-        sampleText = (TextView) findViewById(R.id.sampleText);
+        sampleTitle =  findViewById(R.id.sampleTitle);
+        sampleText =  findViewById(R.id.sampleText);
         float titleSize = pxtoSp(sampleTitle.getTextSize());
         float textSize = pxtoSp(sampleText.getTextSize());
         int titleSize2 = (int) titleSize;
@@ -642,8 +642,8 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
     }
 
     public void defaultTextSize(View view) {
-        sampleTitle = (TextView) findViewById(R.id.sampleTitle);
-        sampleText = (TextView) findViewById(R.id.sampleText);
+        sampleTitle =  findViewById(R.id.sampleTitle);
+        sampleText =  findViewById(R.id.sampleText);
         this.myTitleSize = 20F;
         this.myTextSize = 14F;
         sampleTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
@@ -732,9 +732,6 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
         if (which == 1) {
             switch (item.getItemId()) {
                 case R.id.defaultC:
-                    changeSampleColor(Color.BLACK);
-                    MainActivity.this.closeContextMenu();
-                    return true;
                 case R.id.blackC:
                     changeSampleColor(Color.BLACK);
                     MainActivity.this.closeContextMenu();
@@ -785,6 +782,7 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
         } else if (which == 2) {
             switch (item.getItemId()) {
                 case R.id.defaultCc:
+                case R.id.whiteCc:
                     changeSampleColor(Color.WHITE);
                     MainActivity.this.closeContextMenu();
                     return true;
@@ -822,10 +820,6 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
                     return true;
                 case R.id.cyanCc:
                     changeSampleColor(Color.CYAN);
-                    MainActivity.this.closeContextMenu();
-                    return true;
-                case R.id.whiteCc:
-                    changeSampleColor(Color.WHITE);
                     MainActivity.this.closeContextMenu();
                     return true;
                 case R.id.magentaCc:
@@ -934,8 +928,8 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
     }
 
     public void changeSampleColor(int color) {
-        sampleTitle = (TextView) findViewById(R.id.sampleTitle);
-        sampleText = (TextView) findViewById(R.id.sampleText);
+        sampleTitle =  findViewById(R.id.sampleTitle);
+        sampleText =  findViewById(R.id.sampleText);
         if (which == 1) {
             this.fontColor = color;
         } else if (which == 2) {
@@ -954,8 +948,8 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
     }
 
     public void changeSampleColorMatter() {
-        sampleTitle = (TextView) findViewById(R.id.sampleTitle);
-        sampleText = (TextView) findViewById(R.id.sampleText);
+        sampleTitle =  findViewById(R.id.sampleTitle);
+        sampleText =  findViewById(R.id.sampleText);
         sampleTitle.setTextColor(this.fontColor);
         sampleText.setTextColor(this.fontColor);
         sampleTitle.setBackgroundColor(this.backColor);
@@ -972,8 +966,8 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
     }
 
     public void changeSampleFontStyleMatter() {
-        sampleTitle = (TextView) findViewById(R.id.sampleTitle);
-        sampleText = (TextView) findViewById(R.id.sampleText);
+        sampleTitle =  findViewById(R.id.sampleTitle);
+        sampleText =  findViewById(R.id.sampleText);
         sampleTitle.setTypeface(null, this.titleTf);
         sampleText.setTypeface(null, this.textTf);
     }
@@ -1010,8 +1004,8 @@ public class MainActivity extends Activity implements AdapterView.OnFocusChangeL
         myText.setTypeface(this.font);
     }
     public void changeSampleFontMatter(){
-        sampleTitle=(TextView) findViewById(R.id.sampleTitle);
-        sampleText=(TextView) findViewById(R.id.sampleText);
+        sampleTitle= findViewById(R.id.sampleTitle);
+        sampleText= findViewById(R.id.sampleText);
         sampleTitle.setTypeface(this.font);
         sampleText.setTypeface(this.font);
     }

@@ -36,7 +36,8 @@
         android:textIsSelectable="false"
         android:layout_below="@+id/share"
         android:text="@string/change_text_size"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
